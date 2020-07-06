@@ -25,30 +25,47 @@ main{
     background-color: rgb(255, 255, 255);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 2fr 1fr;
 }   
-/* organizacion de los elementos de las grillas */
-#google{
+/* organizacion de los elementos de las grillas globales*/
+#centro{
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-end: 3;    
+}
+/* generación de la parrilla para el contenido del centro */
+#centrointerno{
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 3fr 0.5fr 1fr ;
+}
+/* ubicacion de cada uno de los contenidos */
+#google{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    justify-self: center;
 }
 #caja{
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: center;
+}
+/* ubicación de este elemento y generación de un flex para colocar los botones */
+#botones{
+    grid-column-start: 1;
+    grid-column-end: 2;
     grid-row-start: 3;
     grid-row-end: 4;
-    width: 600px;
-    height: 100px;
-    font-size: large;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
-#botones{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 4;
-    grid-row-end: 5;
-}
+/* aspectro de los botones */
 #botonmain{
     margin: 10px;
     padding: 5px;
@@ -56,16 +73,17 @@ main{
     color: black;
     border-radius: 5px;
     text-decoration: none;
-    width: 1600px;
-    height: 100px;
+    width: 200px;
     font-size: large;
-    
+    text-align: center;
 }
+/* ubicación del boton de whatsapp */
 #wapp{
     position: fixed;
     right: 20px;
     bottom: 100px;
 }
+/* generación de la regilla del footer */
 footer{
     padding-left: 20px;
     width: 100%;
@@ -75,8 +93,8 @@ footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 8fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    
-    background-color: rgb(207, 203, 203);    
+    background-color: rgb(207, 203, 203);   
+ 
 }
 #f1{
     margin-left: 5px;
